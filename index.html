@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shiv Power Solution | AI Business Operating System</title>
+    <meta name="description" content="Manage leads, customers, projects, quotations, tasks and business operations from one intelligent AI-powered workspace." />
+    <meta property="og:title" content="Shiv Power Solution | AI Business Operating System" />
+    <meta property="og:description" content="Manage leads, customers, projects, quotations, tasks and business operations from one intelligent AI-powered workspace." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script>
+      // Global suppression for benign dev-server WebSocket disconnection/closure errors in iframe sandbox
+      (function() {
+        var originalConsoleError = console.error;
+        console.error = function() {
+          var msg = arguments[0];
+          if (typeof msg === 'string' && (msg.includes('WebSocket') || msg.includes('websocket') || msg.includes('[vite] failed to connect'))) {
+            return;
+          }
+          originalConsoleError.apply(console, arguments);
+        };
+
+        window.addEventListener('unhandledrejection', function(event) {
+          var reasonStr = (event && event.reason) ? (event.reason.message || String(event.reason)) : '';
+          if (reasonStr && (reasonStr.includes('WebSocket') || reasonStr.includes('websocket'))) {
+            event.preventDefault();
+            if (typeof event.stopImmediatePropagation === 'function') {
+              event.stopImmediatePropagation();
+            }
+          }
+        }, true);
+
+        window.addEventListener('error', function(event) {
+          var msg = event && event.message ? String(event.message) : '';
+          if (msg && (msg.includes('WebSocket') || msg.includes('websocket'))) {
+            event.preventDefault();
+            if (typeof event.stopImmediatePropagation === 'function') {
+              event.stopImmediatePropagation();
+            }
+          }
+        }, true);
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
